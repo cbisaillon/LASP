@@ -10667,6 +10667,16 @@ a.text-dark:focus {
   cursor: pointer;
 }
 
+.post_metadata {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_metadata div {
+  line-height: 10px;
+  display: inline;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

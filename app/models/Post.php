@@ -4,6 +4,8 @@ namespace App\models;
 
 
 use App\User;
+use Carbon\Carbon;
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,12 +18,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
 {
     use SoftDeletes;
-
-    protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
-    ];
 
     /**
      * The comments associated with this post
@@ -36,6 +32,6 @@ class Post extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo the user that made this post
      */
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->select(array('id', 'name'));
     }
 }

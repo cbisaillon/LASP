@@ -60,6 +60,12 @@ class RouteServiceProvider extends ServiceProvider
             ->prefix('posts')
             ->namespace($this->namespace)
             ->group(base_path('routes/posts.php'));
+
+        //Routes for the guide controller
+        Route::middleware('web')
+            ->prefix('guide')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/guide.php'));
     }
 
     /**
@@ -72,6 +78,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix('api')
+             ->name('api.')
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));

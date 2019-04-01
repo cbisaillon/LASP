@@ -2,14 +2,12 @@
 @section('title', __('algorithms'))
 
 @section('content')
-    @foreach($posts as $post)
-            <div class="post clickable" onclick="window.location='{{route('posts.show', $post)}}'">
-                <div class="post-meta d-inline">
-                    <h3>{{$post->title}}</h3>
-                    <p>{{$post->created_at->format('d/m/Y')}}</p>
-                    <p>{{__('From')}} {{$post->user->name}}</p>
-                </div>
-            </div>
-        <hr>
-    @endforeach
+    <div class="row">
+        <div class="col-8">
+            <post-list
+                    end-point="{{$post_endpoint}}"
+                    show-endpoint="{{$show_endpoint}}"></post-list>
+        </div>
+    </div>
+
 @endsection

@@ -15,6 +15,8 @@ return [
 
     'default' => env('DB_CONNECTION', 'mysql'),
 
+    'fetch'   => PDO::FETCH_ASSOC,
+
     /*
     |--------------------------------------------------------------------------
     | Database Connections

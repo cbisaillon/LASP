@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('posts.index')}}">{{__('Posts')}}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('guide.index')}}">{{__('Guide')}}</a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -32,7 +35,7 @@
                         <a class="nav-link" href="{{route('posts.create')}}">{{__('Publish algorithm')}}</a>
                     </li>
                     <li class="nav-item">
-                        <form id="logout-form" method="post" action="{{route('logout')}}">
+                        <form class="clickable" id="logout-form" method="post" action="{{route('logout')}}">
                             {{csrf_field()}}
                             <a onclick="document.getElementById('logout-form').submit()" class="nav-link">{{__('Log out')}}</a>
                         </form>
