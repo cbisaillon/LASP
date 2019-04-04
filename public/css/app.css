@@ -10677,6 +10677,37 @@ a.text-dark:focus {
   display: inline;
 }
 
+.post_title {
+  margin-right: 20px;
+}
+
+.like-box,
+.nb-likes {
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.thumbs-up.clicked:before {
+  color: #a5a5a5 !important;
+}
+
+.comment-container {
+  background-color: #f7f7f7;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #dadada;
+  width: 80%;
+}
+
+.comment-container .comment-header div {
+  display: inline-block;
+}
+
+.comment-container .comment-header .comment-header-date {
+  margin-right: 10px;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

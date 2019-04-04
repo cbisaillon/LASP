@@ -66,6 +66,12 @@ class RouteServiceProvider extends ServiceProvider
             ->prefix('guide')
             ->namespace($this->namespace)
             ->group(base_path('routes/guide.php'));
+
+        //Routes for the comments controller
+        Route::middleware('web')
+            ->prefix('comments')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/comments.php'));
     }
 
     /**

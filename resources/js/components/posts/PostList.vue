@@ -3,8 +3,15 @@
         <div class="clickable" v-for="(post, index) in posts" @click="showPost(post.id)">
             <div class="post_metadata">
                 <div>
-                    <h3 class="d-inline">{{post.title}}</h3>
-                    <star-system :number-of-stars="3"></star-system>
+                    <h3 class="d-inline post_title">{{post.title}}</h3>
+                    <like-box :editable="false"
+                              :nb-prop="post.nb_likes"
+                              ></like-box>
+
+                    <p class="nb-likes d-inline-block">
+                        <i class="far fa-comments"></i>
+                        {{post.nb_comments}}
+                    </p>
                 </div>
                 <div class="text-right">
                     <p>Posted on {{post.created_at}}</p>
@@ -42,8 +49,7 @@
                 let self = this;
                 axios.get(this.endPoint)
                     .then(function(response){
-                        console.log(response);
-                        self.posts = response.data;
+                        self.posts = response.data.data;
                     })
                     .catch(function(error){
                         console.log(error);
@@ -51,6 +57,9 @@
             },
             showPost(post_id){
                 window.location = this.showEndpoint.replace(':post_id', post_id);
+            },
+            makeLikeEndPoint(post){
+                return this.showEndpoint.replace(':post_id', post.id) + "/like"
             }
         },
         mounted() {

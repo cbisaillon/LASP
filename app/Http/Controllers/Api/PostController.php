@@ -12,6 +12,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -20,10 +21,23 @@ class PostController extends Controller
      * @return Post[]|\Illuminate\Database\Eloquent\Collection
      */
     public function getAllPosts(Request $request){
-        $posts = Post::with('user')->paginate(10)->sortByDesc('created_at')->values();
+        $posts = Post::query()->with('user')->paginate(6, ['id', 'title', 'description', 'created_at', 'user_id'])->toJson();
 
-        return $posts->map(function($post){
-            return $post->only(['id', 'title', 'description', 'user', 'created_at']);
-        });
+        return $posts;
+    }
+
+    /**
+     * Like a specific post
+     * @param Request $request
+     * @param Post $post
+     */
+    public function likePost(Request $request, Post $post){
+            $user = Auth::user();
+
+            if ($user->like($post)) {
+                return "Success";
+            } else {
+                return response('Failure', 405);
+            }
     }
 }

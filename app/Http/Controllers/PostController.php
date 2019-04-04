@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\models\Comment;
 use App\models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 /**
@@ -26,7 +28,9 @@ class PostController extends Controller
     }
 
     public function show(Request $request, Post $post){
-        return view('posts/show', compact('post'));
+        $liked = Auth::user()->liked($post);
+
+        return view('posts/show', compact('post', 'liked'));
     }
 
 
@@ -74,6 +78,28 @@ class PostController extends Controller
     }
 
     public function update(Request $request, Post $post){
+        return redirect(route('posts.show', $post));
+    }
+
+    /**
+     * Add a comment to the post
+     * @param Request $request
+     * @param Post $post
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function addComment(Request $request, Post $post){
+        $request->validate([
+            'text' => 'required'
+        ]);
+        $user = $request->user();
+
+        //Create the comment
+        $comment = new Comment();
+        $comment->text = $request->input('text');
+        $comment->user_id = $user->id;
+        $comment->post_id = $post->id;
+        $comment->save();
+
         return redirect(route('posts.show', $post));
     }
 }

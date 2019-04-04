@@ -20,8 +20,8 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-Vue.component('star-system', require('./components/posts/StarSystem.vue').default);
 Vue.component('post-list', require('./components/posts/PostList.vue').default);
+Vue.component('like-box', require('./components/posts/LikeBox.vue').default);
 
 
 /**
