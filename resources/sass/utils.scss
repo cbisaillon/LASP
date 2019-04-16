@@ -1,3 +1,15 @@
 .clickable{
   cursor: pointer;
 }
+
+.w-fit{
+  width:fit-content;
+}
+
+.link-no-style{
+  color:$font-color;
+}
+.link-no-style:hover{
+  color:initial;
+  text-decoration: none;
+}

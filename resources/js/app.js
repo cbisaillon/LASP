@@ -22,6 +22,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 Vue.component('post-list', require('./components/posts/PostList.vue').default);
 Vue.component('like-box', require('./components/posts/LikeBox.vue').default);
+Vue.component('show-more', require('./components/ShowMore.vue').default);
 
 
 /**

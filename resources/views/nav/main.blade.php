@@ -16,6 +16,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('guide.index')}}">{{__('Guide')}}</a>
                 </li>
+                <li>
+                    <a class="nav-link" href="{{route('research.index')}}">{{__('Researches')}}</a>
+                </li>
+                <li>
+                    <a target="_blank" class="nav-link" href="https://github.com/lool01/LAOP_alpha">LAOP on Github</a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

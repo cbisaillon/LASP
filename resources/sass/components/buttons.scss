@@ -1,0 +1,8 @@
+.btn-default{
+  background-color:$primary-color;
+  color: white;
+}
+.btn-default:hover{
+  color: white;
+  background-color:$secondary-color;
+}

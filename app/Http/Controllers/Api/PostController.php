@@ -21,7 +21,7 @@ class PostController extends Controller
      * @return Post[]|\Illuminate\Database\Eloquent\Collection
      */
     public function getAllPosts(Request $request){
-        $posts = Post::query()->with('user')->paginate(6, ['id', 'title', 'description', 'created_at', 'user_id'])->toJson();
+        $posts = Post::query()->with('user')->paginate(6, ['id', 'jar_file_location', 'title', 'description', 'created_at', 'user_id'])->toJson();
 
         return $posts;
     }

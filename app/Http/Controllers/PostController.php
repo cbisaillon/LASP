@@ -16,6 +16,13 @@ use Illuminate\Support\Facades\Storage;
  */
 class PostController extends Controller
 {
+    protected $user;
+
+    public function __construct()
+    {
+        $user = Auth::user();
+    }
+
     /**
      * Show all the posts
      * @return string
@@ -28,7 +35,7 @@ class PostController extends Controller
     }
 
     public function show(Request $request, Post $post){
-        $liked = Auth::user()->liked($post);
+        $liked = $this->user ? $this->user->liked($post) : false;
 
         return view('posts/show', compact('post', 'liked'));
     }

@@ -1,7 +1,7 @@
 <template>
     <div @click="addLike()" :class="{clickable : this.editable}" class="d-inline-block like-box">
         <p>
-            <i v-if="clicked" class="fas fa-thumbs-up thumbs-up"></i>
+            <i v-if="clicked" class="fas fa-thumbs-up thumbs-up clicked"></i>
             <i v-else class="far fa-thumbs-up thumbs-up"></i>
 
             <span>{{nb}}</span>

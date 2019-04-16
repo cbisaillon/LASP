@@ -18,7 +18,7 @@
 
             <p>{{$post->description}}</p>
             <a href="{{route('posts.download', $post)}}">
-                <button class="btn btn-primary">{{__('Download jar')}}</button>
+                <button class="btn btn-default">{{__('Download jar')}}</button>
             </a>
 
             <hr>
