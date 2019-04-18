@@ -8,6 +8,8 @@
 import 'bootstrap';
 require('./bootstrap');
 
+window.toastr = require('toastr/toastr');
+
 window.Vue = require('vue');
 
 /**
@@ -23,6 +25,7 @@ window.Vue = require('vue');
 Vue.component('post-list', require('./components/posts/PostList.vue').default);
 Vue.component('like-box', require('./components/posts/LikeBox.vue').default);
 Vue.component('show-more', require('./components/ShowMore.vue').default);
+Vue.component('copy-to-clip-board-button', require('./components/CopyToClipBoardButton').default);
 
 
 /**

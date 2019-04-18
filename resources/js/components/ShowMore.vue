@@ -1,11 +1,15 @@
 <template>
     <div>
         <p>{{short}} <span v-if="!showFull">...</span></p>
-        <div class="mx-auto w-fit">
-            <button @click="showFull = !showFull" class="btn btn-default">
+        <div>
+            <button @click="showFull = !showFull" class="btn btn-default d-inline-block">
                 <span v-if="!showFull">Read more</span>
                 <span v-else>Close</span>
                     </button>
+            <a target="_blank" :href="fullUrl" v-if="fullUrl != ''">
+                <button class="btn btn-primary d-inline-block">View full paper</button>
+            </a>
+
         </div>
 
     </div>
@@ -22,6 +26,10 @@
             wordsToShow: {
                 type: Number,
                 default: 25,
+            },
+            fullUrl: {
+                type: String,
+                default: ''
             }
         },
         data: function() {
