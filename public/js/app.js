@@ -1973,6 +1973,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostList",
   props: {
@@ -37540,7 +37541,8 @@ var render = function() {
   return _c(
     "button",
     {
-      staticClass: "btn btn-default h-fit d-inline-flex align-items-center",
+      staticClass:
+        "btn btn-outline-primary h-fit d-inline-flex align-items-center",
       on: { click: _vm.clicked }
     },
     [
@@ -37641,7 +37643,7 @@ var render = function() {
     },
     [
       _c("p", [
-        _vm.clicked
+        _vm.clicked || _vm.liked
           ? _c("i", { staticClass: "fas fa-thumbs-up thumbs-up clicked" })
           : _c("i", { staticClass: "far fa-thumbs-up thumbs-up" }),
         _vm._v(" "),
@@ -37695,7 +37697,11 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("like-box", {
-                  attrs: { editable: false, "nb-prop": post.nb_likes }
+                  attrs: {
+                    editable: false,
+                    "nb-prop": post.nb_likes,
+                    liked: post.liked
+                  }
                 }),
                 _vm._v(" "),
                 _c("p", { staticClass: "nb-likes d-inline-block" }, [

@@ -1,5 +1,5 @@
 <template>
-    <button @click="clicked" class="btn btn-default h-fit d-inline-flex align-items-center">
+    <button @click="clicked" class="btn btn-outline-primary h-fit d-inline-flex align-items-center">
         <span class="mr-2">{{title}}</span>
         <i class="far fa-copy"></i>
     </button>

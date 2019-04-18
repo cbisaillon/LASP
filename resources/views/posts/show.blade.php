@@ -53,12 +53,17 @@
                 </div>
                 <hr/>
             @endforeach
+
             <!-- add comment field -->
+            @if(Auth::user())
             <form method="post" action="{{route('posts.comment', $post)}}">
                 {{csrf_field()}}
                 <textarea class="form-control mb-3" name="text" placeholder="{{__('Add a comment')}}"></textarea>
                 <button class="btn btn-success">{{__('Add comment')}}</button>
             </form>
+                @else
+            <p>{{__('Log in to comment this algorithm')}}</p>
+                @endif
 
         </div>
     </div>

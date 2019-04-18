@@ -50,8 +50,6 @@ class Post extends Model
     public function getLikedAttribute(){
         $user = Auth::guard('web')->user();
 
-        error_log("aa " . ($user == null));
-
         if($user && $user->liked($this)){
             return true;
         }

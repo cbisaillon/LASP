@@ -35,7 +35,7 @@ class PostController extends Controller
     }
 
     public function show(Request $request, Post $post){
-        $liked = $this->user ? $this->user->liked($post) : false;
+        $liked = $request->user() ? $request->user()->liked($post) : false;
 
         return view('posts/show', compact('post', 'liked'));
     }

@@ -6,6 +6,7 @@
                     <h3 class="d-inline post_title">{{post.title}}</h3>
                     <like-box :editable="false"
                               :nb-prop="post.nb_likes"
+                              :liked="post.liked"
                               ></like-box>
 
                     <p class="nb-likes d-inline-block">
