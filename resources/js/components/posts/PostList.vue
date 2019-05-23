@@ -15,7 +15,7 @@
                     </p>
                 </div>
                 <div class="text-right">
-                    <p>Posted on {{post.created_at}}</p>
+                    <p class="post_creation_date">Posted on {{post.created_at}}</p>
                     <p>By {{post.user.name}}</p>
                 </div>
             </div>

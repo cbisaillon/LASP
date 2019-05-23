@@ -37717,7 +37717,9 @@ var render = function() {
             ),
             _vm._v(" "),
             _c("div", { staticClass: "text-right" }, [
-              _c("p", [_vm._v("Posted on " + _vm._s(post.created_at))]),
+              _c("p", { staticClass: "post_creation_date" }, [
+                _vm._v("Posted on " + _vm._s(post.created_at))
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v("By " + _vm._s(post.user.name))])
             ])

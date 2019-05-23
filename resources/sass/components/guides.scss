@@ -1,0 +1,36 @@
+.console_text{
+  background-color: #f9f9f9;
+  color: #252525;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  font-size: 0.9em;
+}
+
+.guide_subsection{
+  padding-left:5%;
+  .guide_prerequisite{
+    width: fit-content;
+    background-color: #f9f9f9;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #c2c2c2;
+    margin-bottom: 20px;
+  }
+  .guide_steps{
+    p{
+      margin-bottom:5px;
+    }
+  }
+}
+
+pre, code {
+  font-family: monospace, monospace;
+}
+pre {
+  overflow: auto;
+}
+pre > code {
+  display: block;
+  padding-left: 1rem;
+  word-wrap: normal;
+}

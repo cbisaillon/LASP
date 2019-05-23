@@ -11,10 +11,10 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('posts.index')}}">{{__('Posts')}}</a>
+                    <a class="nav-link" href="{{route('posts.index')}}">{{__('Algorithms')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('guide.index')}}">{{__('Guide')}}</a>
+                    <a class="nav-link" href="{{route('guide.index')}}">{{__('Guides')}}</a>
                 </li>
                 <li>
                     <a class="nav-link" href="{{route('research.index')}}">{{__('Researches')}}</a>
